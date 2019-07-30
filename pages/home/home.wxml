@@ -1,0 +1,66 @@
+<!--pages/home/home.wxml-->
+<!-- 顶部导航栏 -->
+<view class="navbar" bindtap="navbarTap">
+  <text class="item {{currentTab==index?'active':''}}" wx:for="{{navbars}}" wx:key="{{index}}" data-idx="{{index}}">{{item.navbarName}}</text>
+</view>
+<!-- 轮播图 -->
+<swiper indicator-dots="true"
+  autoplay="true" interval="3000" duration="1000">
+  <block wx:for="{{banners}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item.imgUrl}}" catchtap="show" class="slide-image" mode="widthFix" data-goodsid="{{item.id}}"/>
+    </swiper-item>
+  </block>
+</swiper>
+<!--分类导航 -->
+<view>
+  <view class="navs">
+    <block wx:for="{{menus}}" wx:key="{{index}}">
+      <view class="nav-item">
+        <image class="nav-image" src="{{item.imgUrl}}"></image>
+        <text>{{item.menuName}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+<!-- 新品特卖 -->
+<view class="new-container">
+  <view class="new-title">
+    <text>新品特卖</text>
+    <view class="line_flag"></view>
+  </view>
+  <view class="new-item" wx:for="{{brands}}" wx:key="index">
+    <navigator url="/pages/brand/brand?activityId={{item.id}}">
+      <image src="{{item.imgUrl}}" mode="widthFix"></image>
+    </navigator>
+    <text class="newTxt">{{item.name}}</text>
+    <text class="newSale"> {{item.remark}}</text>
+  </view>
+</view>
+<!-- 福利专场 -->
+<view class="welfare-container">
+  <view class="welfare-title">
+    <text class="welfare-name">福利专场</text>
+    <text class="welfare-time">每天早10晚8准时上新</text>
+  </view>
+  <scroll-view scroll-y="true">
+    <view class="welfare-list">
+      <view class="welfare-card" wx:for-items="{{newGoods}}" wx:key="id" data-goodsid="{{item.id}}" catchtap="show">
+        <image src="{{item.imgUrl}}" mode="widthFix"></image>
+        <text class="goods-title">{{item.name}}</text>
+        <view class="allprice">
+          <view>
+            <text class="newprice">￥{{item.price}}</text>
+            <text class="oldprice">￥{{item.privilegePrice}}</text>
+          </view>
+          <text class="discount">{{item.discount}}折</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<!-- 加载更多 -->
+ <view class="loadmore" hidden="{{hidden}}">
+    <van-loading type="spinner" size="20px"/>
+    <text>努力加载中...</text>
+  </view>  

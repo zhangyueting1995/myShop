@@ -1,0 +1,41 @@
+<!--pages/cart1/cart1.wxml-->
+<view class="cart-container" wx:if="{{carts.length==0}}">
+    <image src="/images/bg_cart.png"></image>
+    <text>购物车空空如也</text>
+    <button class="btn" bindtap="goToShopping">去抢购</button>
+</view> 
+
+
+<!-- 如果本地有缓存数据所显示的内容 -->
+<!--pages/cart/cart.wxml-->
+<view wx:else>
+  <scroll-view scroll-y="true" class="scroll">
+    <view class="goodsCard" wx:for="{{carts}}" wx:key="{{index}}">
+      <van-checkbox value="{{item.checked}}" data-id="{{item.id}}" checked-color="#f0145a" bind:change="selOnly"></van-checkbox>
+      <image class="card-img" mode="widthFix" src="{{item.imgUrl}}" ></image>
+      <view class="card-info">
+        <view class="info-detail">
+          <text>{{item.name}}</text>
+          <image style="width:35rpx" mode="widthFix" src="/images/del.png" data-id="{{item.id}}" catchtap="delCard"></image>
+        </view>
+        <view class="info-detail">
+          <text class="price">￥{{item.price*item.goodsCount}}</text>
+          <view>
+            <view class="btns">
+              <text class="del {{item.goodsCount==1?'disabled':''}}" data-id="{{item.id}}" catchtap="delCount" disabled>-</text>
+              <text class="count">{{item.goodsCount}}</text>
+              <text class="add {{item.goodsCount==10?'disabled':''}}" data-id="{{item.id}}" catchtap="addCount">+</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 底部结算栏 -->
+  <view class="footer">
+    <van-checkbox value="{{selAll}}" checked-color="#f0145a" bind:change="selAll">全选</van-checkbox>
+    <view>合计:￥<text class="total">{{totalMoneny}}</text></view>
+    <button type="warn" bindtap="goToPay">去结算</button>
+  </view>
+</view>
+

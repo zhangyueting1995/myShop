@@ -1,0 +1,67 @@
+<!--pages/mine/mine.wxml-->
+<view class="userinfo">
+   <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="userinfo-btn"> 点击微信授权 </button>
+   <block wx:else>
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+    <text>{{userInfo.nickName}}</text>
+   </block>
+</view>
+<!-- 我的订单 -->
+<view class="order">
+  <text>我的订单</text>
+  <text>查看全部订单</text>
+</view>
+<!-- 分类导航栏 -->
+<view class="navs">
+  <view class="navs-items">
+    <image src="/images/person/personal_pay.png"></image>
+    <text>带付款</text>
+  </view>
+  <view class="navs-items">
+    <image src="/images/person/personal_receipt.png"></image>
+    <text>待收货</text>
+  </view>
+  <view class="navs-items">
+    <image src="/images/person/personal_comment.png"></image>
+    <text>待评价</text>
+  </view>
+  <view class="navs-items">
+    <image src="/images/person/personal_service.png"></image>
+    <text>退款/售后</text>
+  </view>
+</view>
+<!-- 个人清单 -->
+<view class="person-list">
+
+  <view class="list-item">
+    <image class="item-image" src="../../images/person/personal_card.png"></image>
+    <text class="item-text">优惠券</text>
+  </view>
+  <view class="person-line"></view>
+  <view class="list-item">
+    <image class="item-image" src="../../images/person/personal_favorite.png"></image>
+    <navigator url="../addressList/addressList">
+      <text class="item-text">我的收藏</text>
+    </navigator>
+  </view>
+  <view class="person-line"></view>
+  <view class="list-item">
+    <image class="item-image" src="../../images/person/personal_site.png"></image>
+    <text class="item-text" bindtap="myAddress">收货地址</text>
+  </view>
+  <view class="person-line"></view>
+  <view class="list-item">
+    <image class="item-image" src="../../images/person/personal_sale_record.png"></image>
+    <text class="item-text">售后记录</text>
+  </view>
+  <view class="person-line"></view>
+  <view class="list-item">
+    <image class="item-image" src="../../images/person/personal_evaluated.png"></image>
+    <text class="item-text">我的评价</text>
+  </view>
+  <view class="person-line"></view>
+  <view class="list-item">
+    <image class="item-image" src="../../images/person/personal_customer.png"></image>
+    <text class="item-text">在线客服</text>
+  </view>
+</view>

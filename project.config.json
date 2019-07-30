@@ -1,0 +1,111 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.7",
+	"appid": "wx0a71f36636166c71",
+	"projectname": "myShop",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 7,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/classify/classify",
+					"pathName": "pages/classify/classify",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/cart1/cart1",
+					"pathName": "pages/cart1/cart1",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/mine",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/mine",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/detail/detail",
+					"pathName": "pages/detail/detail",
+					"query": "goodsId=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/brand/brand",
+					"pathName": "pages/brand/brand",
+					"query": "activityId=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/cart1/cart1",
+					"pathName": "pages/cart1/cart1",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/mine",
+					"pathName": "pages/mine/mine",
+					"scene": null
+				}
+			]
+		}
+	}
+}

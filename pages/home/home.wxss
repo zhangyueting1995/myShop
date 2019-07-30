@@ -1,0 +1,139 @@
+/* pages/home/home.wxss */
+page{  
+  display: flex;  
+  flex-direction: column;  
+  height: 100%;  
+}  
+.navbar{
+  display:flex;
+  background-color: #fff;
+  font-size:14px;
+}
+.navbar .item{  
+  position: relative;  
+  flex: auto;  
+  text-align: center;  
+  line-height: 80rpx; 
+  box-sizing: border-box;
+}  
+/* 顶部导航字体颜色 */
+.navbar .item.active{  
+  color: #f0145a; 
+  border-bottom:6rpx solid #f0145a; 
+}  
+/* 轮播图 */
+/* 分类导航 */
+.navs{
+  display:flex;
+  width:100%;
+  justify-content: left;
+  flex-direction: row;
+  flex-wrap:wrap;
+  padding:20rpx 0;
+}
+.nav-item{
+  width:25%;
+  display:flex;
+  align-items: center;
+  flex-direction:column;
+  padding-top:20rpx;
+}
+.nav-image{
+  width:80rpx;
+  height:80rpx;
+}
+.nav-item text{
+  font-size:25rpx;
+}
+/* 新品特卖 */
+.new-container{
+  padding:0 20rpx;
+}
+.new-title{
+  width:100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  font-size:40rpx;
+}
+.line_flag{
+  margin-top:30rpx;
+  margin-bottom:30rpx;
+  width:80rpx;
+  border:1rpx solid  #ccc;
+}
+.new-item{
+  display:flex;
+  flex-direction: column;
+  padding:15rpx 0;
+}
+.new-item image{
+  width:100%;
+}
+.newTxt{
+  font-weight: 600;
+font-size: 32rpx;
+}
+.newSale{
+  font-size: 28rpx;
+}
+/* 福利专场*/
+.welfare-container{
+  margin-top:40rpx;
+  padding:0 20rpx;
+}
+.welfare-title{
+  display:flex;
+  flex-direction: column;
+}
+.welfare-name{
+  font-size: 14px;
+  font-weight: 900;
+}
+.welfare-time{
+  font-size: 10px;
+  color: #98989f;
+}
+/* 商品列表 */
+.welfare-list{
+  margin-top:20rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
+}
+.welfare-card{
+  width:48.5%;
+  font-size: 24rpx;
+  margin-bottom:35rpx;
+}
+.welfare-card image{
+  width:100%;
+  border:1px solid rgb(238, 227, 227);
+  box-sizing: border-box;
+}
+.welfare-card .allprice{
+  display:flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+}
+.welfare-card .newprice{
+  color:#f0145a;
+  font:bolder 30rpx "yahei";
+}
+.welfare-card .oldprice{
+  color:#98989f;
+  text-decoration: line-through;
+}
+.welfare-card .discount{
+  background-color: black;
+  color:white;
+}
+/* 加载更多 */
+.loadmore{
+  text-align:center;
+  font-size:14px;
+  color:#c9c9c9;
+}
+.loadmore text{
+  padding:0 10rpx;
+}

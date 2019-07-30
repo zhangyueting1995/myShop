@@ -1,0 +1,62 @@
+<!--pages/detail/detail.wxml-->
+<!--轮播图-->
+<swiper indicator-dots="true"  autoplay="true" interval="3000" duration="1000">
+<block wx:for="{{goodsInfo.goodsImg}}" wx:key="{{index}}">
+  <swiper-item>
+    <image    
+    src="{{item}}" mode="widthFix" />
+  </swiper-item>
+</block>
+</swiper>
+<!--商品信息-->
+  <view class="goods-title">
+    {{goodsInfo.name}}
+  </view>
+  <view class="priceContainer">
+    <text class="goods-price">￥{{goodsInfo.price}}</text>
+    <text class="goods-oldprice">原价￥{{goodsInfo.privilegePrice}}</text>
+  </view>
+
+<!--商品详情-->
+<view class="detailContainer">
+  <view>商品详情</view>
+  <scroll-view scroll-y="true" style="margin-bottom:100rpx;">
+    <view
+    wx:for="{{goodsInfo.detailsImg}}" wx:key="{{index}}"
+    ><image class="img_detail" src="{{item}}" mode="widthFix"></image></view>
+  </scroll-view>
+</view>
+
+<!--购物车底部悬浮栏-->
+<view class="cartContainer">
+  <view bindtap="handleToCart"><image src="/images/cart1.png" mode="widthFix"></image></view>
+  <text></text>
+  <view bindtap="addLike"><image src="{{isLike?'/images/enshrine_select.png':'/images/enshrine.png'}}" mode="widthFix"></image></view>
+  <button type="warn" bindtap="handleToPopUp">加入购物车</button>
+  <button type="primary" bindtap="immeBuy">立即购买</button>  
+</view>
+
+<!-- 加入购物车 -->
+<view>
+  <view hidden="{{popupContainerHide}}" class="popupContainer"></view>
+  <view class="addCartContainer {{popupShow?'show':''}}">
+    <view class="InfoContainer">
+      <image class="titleImg" src="{{goodsInfo.imgUrl}}" mode="widthFix"></image>
+      <view class="cartInfo">
+        <p style="color:red;">￥{{goodsInfo.price*goodsCount}}</p>
+        <p>销量 {{goodsInfo.buyRate}} 件</p>
+        <p>商品编码：{{goodsInfo.id}}</p>
+      </view>
+      <view class="close" bindtap="handleToPopUp"><image src="/images/close.png" mode="widthFix"></image></view>
+    </view>
+    <view class="buyCount">
+      <text>购买数量</text>
+      <view class="btns">
+        <text class="del {{goodsCount==1?'disabled':''}}" catchtap="delCount" disabled>-</text>
+        <text class="count">{{goodsCount}}</text>
+        <text class="add {{goodsCount==10?'disabled':''}}" catchtap="addCount">+</text>
+      </view>
+    </view>
+    <button size="large" type="warn" catchtap="addToCart">确定</button>
+  </view>
+</view>

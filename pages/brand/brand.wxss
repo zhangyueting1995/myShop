@@ -1,0 +1,49 @@
+/* pages/brand/brand.wxss */
+page{
+  background: #F3F4F6;
+  padding:20rpx 10rpx;
+  box-sizing:border-box;
+}
+.welfare-list{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
+}
+.welfare-card{
+  width:49%;
+  font-size: 24rpx;
+  background: #fff;
+  margin-bottom:20rpx;
+  display:flex;
+  flex-direction: column;
+  justify-content:space-between;
+}
+.welfare-card image{
+  width:100%;
+}
+.welfare-card .allprice{
+  display:flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+}
+.welfare-card .newprice{
+  color:#f0145a;
+  font:bolder 30rpx "yahei";
+}
+.welfare-card .oldprice{
+  color:#98989f;
+  text-decoration: line-through;
+}
+.welfare-card .discount{
+  background-color: black;
+  color:white;
+}
+
+.loadmore{
+  text-align:center;
+  font-size:14px;
+  color:#c9c9c9;
+}
+.loadmore text{
+  padding:0 10rpx;
+}

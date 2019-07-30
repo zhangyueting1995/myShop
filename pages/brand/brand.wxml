@@ -1,0 +1,22 @@
+<!--pages/brand/brand.wxml-->
+<scroll-view scroll-y="true">
+    <view class="welfare-list">
+      <view class="welfare-card" wx:for="{{brandGoods}}" wx:key="{{index}}" data-goodsid="{{item.id}}" catchtap="handleToDetail">
+        <image src="{{item.imgUrl}}" mode="widthFix"></image>
+        <text class="goods-title">{{item.name}}</text>
+        <view class="allprice">
+          <view>
+            <text class="newprice">￥{{item.price}}</text>
+            <text class="oldprice">￥{{item.privilegePrice}}</text>
+          </view>
+          <text class="discount">{{item.discount}}折</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 加载更多 -->
+ <view class="loadmore" hidden="{{hidden}}">
+    <van-loading type="spinner" size="20px"/>
+    <text>努力加载中...</text>
+  </view>  

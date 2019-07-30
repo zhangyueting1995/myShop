@@ -1,0 +1,154 @@
+/* pages/detail/detail.wxss */
+page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+swiper {
+    height: 750rpx;
+}
+swiper-item image {
+  height: 100%;
+}
+.infoContainer{
+  padding:0 20rpx;
+}
+.goods-title{
+  color:#5B4D59;
+}
+.priceContainer{
+  padding:20rpx 0;
+}
+.goods-price{
+  color:red;
+  margin-right:12px;
+}
+.goods-oldprice{
+  color:#908A8F;
+  font-size:12px;
+  text-decoration: line-through;
+}
+/* 商品详情 */
+.detailContainer{
+  padding:0 10rpx;
+}
+.img_detail{
+  width:100%;
+}
+.cartContainer{
+  position:fixed;
+  left:0;
+  bottom:0;
+  z-index:10;
+  display:flex;
+  justify-content: space-between;
+  background:#fff;
+  height:100rpx;
+  width:100%;
+}
+.cartContainer>view{
+  width:15%;
+  height:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.cartContainer>text{
+  height:100%;
+  border-left:1px solid #ccc;
+}
+.cartContainer image{
+  width:50%;
+  height:50%;
+}
+.cartContainer button{
+  width:35%;
+  font-size:14px;
+  height:100%;
+  border-radius: 0px;
+  line-height:100rpx;
+}
+/*加入购物车弹出层  */
+.popupContainer{
+  position:fixed;
+  left:0;
+  bottom:0;
+  right:0;
+  top:0;
+  z-index:11;
+  background: rgba(0, 0, 0, 0.7);
+}
+popupContainer.hide{
+  display:none;
+}
+.addCartContainer{
+  width:100%;
+  position:fixed;
+  background-color:white;
+  z-index:12;
+  bottom:0;left:0;
+  transition:all 0.4s ease;
+  transform: translateY(150%);
+  
+}
+.addCartContainer.show{
+  transform: translateY(0);
+}
+.InfoContainer{
+  display:flex;
+  justify-content: space-between;
+  border-bottom:1px solid #ccc;
+  padding:10rpx;
+}
+.InfoContainer .titleImg{
+  margin-left:50rpx;
+  margin-top:-70rpx;
+  width:200rpx;
+  border-radius: 10px;
+}
+.InfoContainer .cartInfo{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.InfoContainer .close{
+  border:1px solid red;
+  border-radius: 50%;
+  width:45rpx;
+  height:45rpx;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.close image{
+  width:60%;
+}
+.buyCount{
+  display:flex;
+  justify-content: space-between;
+  padding:50rpx;
+}
+.buyCount .btns{
+  border-radius:2.5px;
+  border:1px solid #908A8F;
+  width:200rpx;
+  height:60rpx;
+  display:flex;
+}
+.btns .count{
+  font-size:12px;
+  border-left:1px solid #908A8F; 
+  border-right:1px solid #908A8F;
+}
+.btns>text{
+  width:33.33%;
+  height:100%;
+  line-height: 60rpx;
+  text-align: center;
+}
+.btns>.add.disabled{
+  color:#ccc;
+}
+.btns>.del.disabled{
+  color:#ccc;
+}
